@@ -1,0 +1,29 @@
+{
+  "name": "tdd-dogsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "compile:watch": "tsc -w",
+    "test": "jest build/*.test.js",
+    "test:watch": "jest build/*.test.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charan-ee/TDD-DogsAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charan-ee/TDD-DogsAPI/issues"
+  },
+  "homepage": "https://github.com/charan-ee/TDD-DogsAPI#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "axios": "^0.22.0",
+    "jest": "^27.2.4",
+    "typescript": "^4.4.3"
+  }
+}
