@@ -6,15 +6,19 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("mocking api call", ()  => {
     it("should return success after the api call", async () => {
-        const mockedResponse: any = {
-            message: "image1",
+        const url: string = 'https://dog.ceo/api/breeds/image/random/'
+        const mockedResponse = {
+            data: {
+                message: "image1",
+                status: 'success'
+            },
             status: 200
         }
         mockedAxios.get.mockResolvedValue(mockedResponse)
-
-        getResponseofUrl()
+        var response = await getResponseofUrl(url)
+        expect(response).toBe(mockedResponse.status)
 
         expect(axios.get).toHaveBeenCalled()
-        expect(axios.get).toHaveBeenCalledWith('https://dog.ceo/api/breeds/image/random')
+        expect(axios.get).toHaveBeenCalledWith(url)
     })
 })
